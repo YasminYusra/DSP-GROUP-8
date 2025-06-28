@@ -1,9 +1,10 @@
 %continue with previous code
 
-y = filter(b,1,audio_data);
+y = filter(b,1,filtered_audio_2);
 Y = abs(fft(y));
-
-plot(freq_vector(1:N), Y(1:N));     
+f = (0:N-1)*(Fs/N);  
+plot(f(1:N), Y(1:N));     
 title('Frequency After Filtering |Y(\omega)|');
 xlabel('Frequency (Hz)'); ylabel('Magnitude');
+
 
